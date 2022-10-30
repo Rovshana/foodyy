@@ -13,7 +13,7 @@ export function Navbar(props) {
             <div className='cursor-pointer' onClick={()=>setShow(!show)}>
                 <AiOutlineMenu size={38} />
             </div>
-            <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2'>
+            <h1 className='text-2xl sm:text-3xl lg:text-3xl px-2'>
                 Best <span className='font-bold'>Foods</span> ever
             </h1>
             <div className='hidden lg:flex bg-gray-200 rounded-full p-1 text-[14px]'>
