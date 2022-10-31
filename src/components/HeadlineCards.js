@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function HeadlineCards(props) {
+ function HeadlineCards(props) {
     
 
     return (
@@ -39,3 +39,4 @@ export function HeadlineCards(props) {
         </div>
     )
 }
+export default HeadlineCards

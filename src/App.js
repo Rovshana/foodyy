@@ -1,17 +1,22 @@
-import { Food } from "./components/Food";
-import { HeadlineCards } from "./components/HeadlineCards";
-import { Hero } from "./components/Hero";
+
+
+import { Route,  Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
+import Home from "./pages";
+import CartPage from "./pages/CartPage";
+
 
 
 
 function App() {
   return (
-    <div className="App">
+    <div>
    <Navbar/>
-   <Hero/>
-   <HeadlineCards/>
-   <Food/>
+  <Routes>
+   <Route path="/" element={<Home/>} />
+   <Route path="/cartpage" element={<CartPage/>} />
+  </Routes>
+  
     </div>
   );
 }

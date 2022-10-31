@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { foodApi } from '../Api'
 
-export function Food(props) {
+ function Food(props) {
     const [data, setData] = useState([])
    
     useEffect(() => {
@@ -17,13 +17,15 @@ export function Food(props) {
     }
     // filter type
 const filterFood = (type)=>{
-setData(data.filter((item)=> item.category === type ))
+setData(data.filter((item)=> item.category === type  ))
+console.log(data)
+console.log(type)
 
 }
 const filterPrice = (price)=>{
-    setData(data.filter((item)=> item.price === price))
+    setData(data.filter((item)=> item.price == price))
 }
-    return (
+    return ( 
         <div className='max-w-[1400px] mx-auto px-4 py-12'> 
         <div>
             <h1 className='text-orange-600 font-bold text-center text-4xl'>Top Rated Menu Items</h1>
@@ -79,3 +81,4 @@ const filterPrice = (price)=>{
         </div>
     )
 }
+export default Food

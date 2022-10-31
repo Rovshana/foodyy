@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import {AiOutlineMenu, AiOutlineSearch, AiOutlineClose,AiFillWallet} from 'react-icons/ai'
 import {BsCart4, BsTruck, BsQuestionCircleFill} from 'react-icons/bs'
 import {MdOutlineFavorite} from 'react-icons/md'
+import { useNavigate } from 'react-router-dom'
 export function Navbar(props) {
     const [show, setShow] = useState(false)
-    
+    const navigate = useNavigate()
 
     return (
          <div className='max-w-[1400] mx-auto flex justify-between items-center p-4'>
@@ -30,7 +31,7 @@ export function Navbar(props) {
             </div>
             {/* cart */}
             <button className='hidden bg-black text-white md:flex items-center py-2 rounded-full'>
-            <BsCart4 size={20} className="mr-2"/> cart
+            <BsCart4 size={20} className="mr-2" onClick={()=>navigate('/cartpage')}/> cart
             </button>
             {/* mobile menu */}
 {show?  <div className='bg-black/80 fixed  w-full h-screen z-10 top-0 left-0'></div>: ''}
