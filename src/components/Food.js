@@ -71,7 +71,7 @@ const filterPrice = (price)=>{
                                 <span className='bg-orange-600 p-1 text-white rounded-lg'>{item.priceNum} $</span>
                             </div>
                             <div className='absoltue top-100 left-0'>
-                            <MdAddShoppingCart onClick={()=>dispatch(addToCart(item))}/>
+                            <button  className= " m-2 border-none bg-orange-600 text-white font-bold text-md hover:bg-white hover:text-orange-600"onClick={()=>dispatch(addToCart(item))}> Add to Cart</button>
                             </div>
 
 
