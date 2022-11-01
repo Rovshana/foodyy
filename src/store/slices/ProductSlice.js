@@ -1,17 +1,47 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: 0,
+  cartItems: [],
+  cartTotalQuantity: 0,
+  cartTotalAmount: 0,
 }
 
 export const ProductSlice = createSlice({
   name: 'product',
   initialState,
-  reducers: {
+ reducers:{
+  addToCart: (state, action) => {
+   const itemIndex = state.cartItems.findIndex((item)=>item.id === action.payload.id)
+
+   if(itemIndex >= 0){
+    state.cartItems[itemIndex].cartQuantity += 1;
+   } else{
+    const product = {...action.payload, cartQuantity: 1}
+    state.cartItems.push(product)
+   }
+   
+    
+  
+  },
+  removeFromCart: (state, action)=>{
+ const nextItems = state.cartItems.filter((item)=> item.id !== action.payload.id)
+ state.cartItems = nextItems
+  },
+  decrease: (state, action)=>{
+    const itemIndex = state.cartItems.findIndex((item)=>item.id === action.payload.id);
+    if(state.cartItems[itemIndex].cartQuantity > 1){
+      state.cartItems[itemIndex].cartQuantity -= 1;
+    }  if(state.cartItems[itemIndex].cartQuantity === 1){
+      const nextItems = state.cartItems.filter((item)=> item.id !== action.payload.id)
+ state.cartItems = nextItems
+    }
+
   }
+  
+ }
 })
 
 // Action creators are generated for each case reducer function
-export const {  } = ProductSlice.actions
+export const {addToCart, removeFromCart, decrease  } = ProductSlice.actions
 
 export default ProductSlice.reducer

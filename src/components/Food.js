@@ -1,10 +1,14 @@
 
 import React, { useState, useEffect } from 'react'
 import { foodApi } from '../Api'
-
+import {MdAddShoppingCart} from 'react-icons/md'
+import { useDispatch, useSelector } from 'react-redux'
+import {addToCart} from '../store/slices/ProductSlice'
  function Food(props) {
-    const [data, setData] = useState([])
-   
+    const [data, setData] = useState([]);
+    const state = useSelector(state=>state)
+    console.log(state)
+   const dispatch = useDispatch()
     useEffect(() => {
       getData()  
     }, [])
@@ -60,11 +64,14 @@ const filterPrice = (price)=>{
             <div className='grid grid-cols-2 lg:grid-cols-4 gap-6'>
                 {
                     data?.map((item, index)=>(
-                        <div key={index} className="border shadow-lg rounded-lg hover:scale-105 duration-300" >
+                        <div key={index} className="border shadow-lg rounded-lg hover:scale-105 duration-300 realtive" >
                             <img src={item.image} alt={item.name} className="w-full h-[200px] object-cover rounded-t-lg"/>
                             <div className='flex justify-between px-2 py-4'>
                                 <p className='font-bold'>{item.name}</p>
                                 <span className='bg-orange-600 p-1 text-white rounded-lg'>{item.priceNum} $</span>
+                            </div>
+                            <div className='absoltue top-100 left-0'>
+                            <MdAddShoppingCart onClick={()=>dispatch(addToCart(item))}/>
                             </div>
 
 
