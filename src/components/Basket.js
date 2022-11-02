@@ -23,7 +23,7 @@ export function Basket(props) {
         <div className="flex justify-center text-5xl">Your Basket</div>
         <div className="flex justify-between items-center mt-4">
           <button onClick={()=>navigate('/')} className="bg-orange-600 text-white border-none p-2 hover:bg-white hover:text-orange-600 ">
-            Contiune Shopping
+            Continue
           </button>
          
         </div>
@@ -35,7 +35,7 @@ export function Basket(props) {
 
             {product.cartItems?.map((item, index) => (
               <div>
-                <div className="flex items-center w-[100%] h-auto  ">
+                <div className="flex  items-center w-[100%] h-auto  ">
                   <div className="flex self-start pl-5">
                     <img
                       className=" hover:scale-105 duration-300 w-[7rem] h-[80%] rounded-full shodow-lg"
@@ -61,7 +61,7 @@ export function Basket(props) {
                   </div>
                   <div className=" flex flex-col justify-center items-center flex-auto">
                     <div className="flex ">
-                      <span className="tex-2xl mr-5">Quantity:</span>
+                      <span className="text-2xl sm:hidden  mr-5">Quantity:</span>
                       <AiOutlineMinus className="cursor-pointer" size={30} onClick = {()=> dispatch(decrease(item))}/>
                       <span className=" w-[30px] h-[25px]  bg-orange-600 text-white/60 text-center">
                        {item.cartQuantity}
