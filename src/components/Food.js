@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { foodApi } from "../Api";
-import { MdAddShoppingCart } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/slices/ProductSlice";
-import InfiniteScroll from "react-infinite-scroll-component";
 function Food(props) {
   const [data, setData] = useState([]);
   const [visible, setVisible] = useState(8);
@@ -28,8 +26,10 @@ function Food(props) {
   // filter type
   const filterFood = (type) => {
     setData(data.filter((item) => item.category === type));
+   
     console.log(data);
     console.log(type);
+
   };
   const filterPrice = (price) => {
     setData(data.filter((item) => item.price == price));

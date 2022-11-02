@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
+  data: [],
   cartItems: [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
@@ -10,6 +11,9 @@ export const ProductSlice = createSlice({
   name: 'product',
   initialState,
  reducers:{
+  setData:  (state, action)=>{
+state.data.push(action.payload)
+  },
   addToCart: (state, action) => {
    const itemIndex = state.cartItems.findIndex((item)=>item.id === action.payload.id)
 
@@ -56,6 +60,6 @@ return cartTotal
 })
 
 // Action creators are generated for each case reducer function
-export const {addToCart, removeFromCart, decrease, getTotal  } = ProductSlice.actions
+export const {addToCart, removeFromCart, decrease, getTotal, setData } = ProductSlice.actions
 
 export default ProductSlice.reducer

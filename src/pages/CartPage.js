@@ -1,13 +1,14 @@
 import React from 'react'
-import CartContainer from '../features/CartContainer'
+import { Basket } from '../components/Basket'
+
  function CartPage(props) {
     
 
     return (
-        <>
-        <CartContainer/>
+        <div>
+        <Basket/>
             
-        </>
+        </div>
     )
 }
 export default CartPage
