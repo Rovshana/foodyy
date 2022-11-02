@@ -9,7 +9,7 @@ import React from 'react'
             <div className='relative rounded-xl'>
                 {/* card content */}
                 <div className='w-full h-full rounded-xl absolute bg-black/50 text-white'>
-                    <p className='font-bold text-2xl px-2 pt-4'> sun's, Bogo out</p>
+                    <p className='font-bold text-2xl px-2 pt-4'>  New Restaurants</p>
                     <p className='px-2'>Through 8/26</p>
                     <button className='bg-white border-white text-black mx-2 absolute  bottom-4'>Order now</button>
                 </div>
