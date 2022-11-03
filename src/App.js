@@ -10,7 +10,7 @@ import CartPage from "./pages/CartPage";
 
 function App() {
   return (
-    <div>
+    <div className="relative">
    <Navbar/>
   <Routes>
    <Route path="/" element={<Home/>} />

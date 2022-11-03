@@ -12,7 +12,7 @@ export function Navbar(props) {
     const navigate = useNavigate()
 
     return (
-         <div className='max-w-[1400] mx-auto flex justify-between items-center p-4 mb-10 fixed z-10  w-full '>
+         <div className='max-w-[1400] mx-auto flex justify-between items-center p-4 mb-10 fixed z-10 top-0  w-full '>
         {/* //     leftSide start */}
             <div className='flex items-center '>
             <div className='cursor-pointer' onClick={()=>setShow(!show)}>
