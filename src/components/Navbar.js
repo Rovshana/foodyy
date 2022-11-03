@@ -12,14 +12,14 @@ export function Navbar(props) {
     const navigate = useNavigate()
 
     return (
-         <div className='max-w-[1400] mx-auto flex justify-between items-center p-4  fixed z-10  left-0 right-0 top-0'>
+         <div className='max-w-[1400] mx-auto flex justify-between items-center p-4 mb-10 fixed z-10  w-full '>
         {/* //     leftSide start */}
             <div className='flex items-center '>
             <div className='cursor-pointer' onClick={()=>setShow(!show)}>
                 <AiOutlineMenu size={38} />
             </div>
             <h1 className='text-2xl sm:text-2xl lg:text-2xl px-2'>
-                Best <span className='font-bold text-orange-600'>Foods</span> 
+             <span className='font-bold text-orange-600'>Foodyy</span> 
             </h1>
             <div className='hidden lg:flex bg-gray-200 rounded-full p-1 text-[14px]'>
                 <p className='bg-black rounded-full p-2 text-white'>Delivery</p>

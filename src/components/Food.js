@@ -3,11 +3,13 @@ import { foodApi } from "../Api";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/slices/ProductSlice";
 function Food(props) {
-  const [data, setData] = useState([]);
-  const [visible, setVisible] = useState(8);
   const state = useSelector((state) => state);
   console.log(state);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+
+  const [data, setData] = useState([]);
+  const [visible, setVisible] = useState(8);
+  ;
   useEffect(() => {
     getData();
   }, []);
