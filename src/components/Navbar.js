@@ -12,9 +12,9 @@ export function Navbar(props) {
     const navigate = useNavigate()
 
     return (
-         <div className='max-w-[1400] mx-auto flex justify-between items-center p-4 relative'>
+         <div className='max-w-[1400] mx-auto flex justify-between items-center p-4  fixed z-10  left-0 right-0 top-0'>
         {/* //     leftSide start */}
-            <div className='flex items-center'>
+            <div className='flex items-center '>
             <div className='cursor-pointer' onClick={()=>setShow(!show)}>
                 <AiOutlineMenu size={38} />
             </div>
@@ -34,12 +34,12 @@ export function Navbar(props) {
                 <input type='text' placeholder='search food' className='bg-transparent p-2 focus:outline-none w-full'/>
             </div>
             {/* cart */}
-    <div onClick={()=>navigate('/cartpage')} className="cursor-pointer">
+    <div onClick={()=>navigate('/cartpage')} className="cursor-pointer realtive">
             <BsCart4  size={40}  /> 
             <span className='absolute top-2 right-3 bottom-8 text-xl text-white bg-orange-600 w-[25px] h-[25px] text-center rounded-full'>{cartTotalQuantity}</span>
             </div>
             {/* mobile menu */}
-{show?  <div className='bg-black/80 fixed  w-full h-screen z-10 top-0 left-0'></div>: ''}
+{show?  <div className=' fixed  w-full h-screen z-10 top-0 left-0'></div>: ''}
            
             {/* sidebar */}
         {show ? <div className='fixed top-0 left-0 w-[300px] h-screen z-10 bg-white duaration-300'>
