@@ -9,6 +9,7 @@ function Food(props) {
 
   const [data, setData] = useState([]);
   const [visible, setVisible] = useState(8);
+  const [filteredData, setFilteredData] = useState([])
   ;
   useEffect(() => {
     getData();
@@ -17,6 +18,7 @@ function Food(props) {
     foodApi
       .then((res) => {
         setData(res.data.food);
+        setFilteredData(res.data.food)
       })
       .catch((err) => {
         console.log(err);
@@ -27,9 +29,12 @@ function Food(props) {
   };
   // filter type
   const filterFood = (type) => {
-    setData(data.filter((item) => item.category === type));
-   
-    console.log(data);
+    if(type === 'all'){
+      return setFilteredData(data)
+    }else{
+   return  setFilteredData(data.filter((item) => item.category === type));
+    }
+    console.log(setFilteredData);
     console.log(type);
 
   };
@@ -50,7 +55,7 @@ function Food(props) {
             <p className="font-bold text-gray-700">Filter type</p>
             <div className="flex justify-between flex-wrap">
               <button
-                onClick={() => filterFood(data)}
+                onClick={() => filterFood('all')}
                 className="border-orange-600 m-1 text-orange-600 hover:bg-orange-600 hover:text-white"
               >
                 All
@@ -104,7 +109,7 @@ function Food(props) {
         {/* displaying foods */}
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {data?.slice(0, visible).map((item, index) => (
+          {filteredData?.slice(0, visible).map((item, index) => (
             <div
               key={index}
               className="border shadow-lg rounded-lg hover:scale-105 duration-300 realtive"
